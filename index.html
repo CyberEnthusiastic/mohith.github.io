@@ -428,62 +428,65 @@
 <section id="projects">
   <div class="section-header reveal">
     <span class="section-tag">04 //</span>
-    <h2 class="section-title">OPERATIONS</h2>
+    <h2 class="section-title">AI SECURITY PROJECTS</h2>
     <div class="section-line"></div>
+  </div>
+  <div style="margin-bottom:28px;padding:16px 22px;border:1px solid rgba(0,212,255,0.12);background:rgba(0,212,255,0.03);font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--neon-cyan);letter-spacing:1px;">
+    <span style="color:var(--neon-green);font-weight:700;">6 OPEN-SOURCE TOOLS</span> &nbsp;// &nbsp;MIT Licensed &nbsp;// &nbsp;Zero Dependencies &nbsp;// &nbsp;Production-Grade &nbsp;// &nbsp;<a href="https://github.com/CyberEnthusiastic" target="_blank" style="color:var(--neon-orange);text-decoration:underline;">VIEW ALL ON GITHUB</a>
   </div>
   <div class="projects-grid">
     <div class="project-card reveal">
-      <div class="project-header"><span class="project-type">IAM AUTOMATION</span><span class="project-icon">🔐</span></div>
+      <div class="project-header"><span class="project-type">ORCHESTRATION</span><span class="project-icon">🛡️</span></div>
       <div class="project-body">
-        <div class="project-title">Access Review Automation Pipeline</div>
-        <p class="project-desc">Automated end-to-end periodic access review using Python. Pulls entitlement data, applies least-privilege logic, generates Excel compliance reports.</p>
-        <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">AWS IAM</span><span class="tech-badge">Boto3</span><span class="tech-badge">Excel</span><span class="tech-badge">RBAC</span></div>
-        <div class="project-links"><a href="#" class="project-link">⬡ GitHub</a><a href="#" class="project-link">⬡ Demo</a></div>
+        <div class="project-title">Security Command Center</div>
+        <p class="project-desc">Unified dark-mode dashboard orchestrating all 5 security tools from a single URL. Flask + SQLite scan history + REST API. One bootstrap command to clone the entire suite.</p>
+        <div class="project-tech"><span class="tech-badge">Flask</span><span class="tech-badge">SQLite</span><span class="tech-badge">REST API</span><span class="tech-badge">Dashboard</span><span class="tech-badge">Python</span></div>
+        <div class="project-links"><a href="https://github.com/CyberEnthusiastic/security-command-center" target="_blank" class="project-link">⬡ GitHub</a></div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-type">WAF TESTING</span><span class="project-icon">⚔️</span></div>
+      <div class="project-body">
+        <div class="project-title">WAF Bypass Lab</div>
+        <p class="project-desc">Defensive WAF coverage tool — 95+ OWASP Top 10 payloads across 9 categories (SQLi, XSS, Log4Shell, SSRF, LFI, CMDi). A-F grading. 91.4% coverage on mock WAF.</p>
+        <div class="project-tech"><span class="tech-badge">OWASP</span><span class="tech-badge">SQLi</span><span class="tech-badge">XSS</span><span class="tech-badge">Log4j</span><span class="tech-badge">SSRF</span><span class="tech-badge">CWE</span></div>
+        <div class="project-links"><a href="https://github.com/CyberEnthusiastic/waf-bypass-lab" target="_blank" class="project-link">⬡ GitHub</a></div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-type">AI / LLM SECURITY</span><span class="project-icon">🧠</span></div>
+      <div class="project-body">
+        <div class="project-title">Prompt Injection Detection Proxy</div>
+        <p class="project-desc">Hybrid ML + heuristic LLM firewall. 12 rules for jailbreaks, data exfil, prompt extraction. 100% F1. Flask REST API with &lt;5ms latency. OWASP LLM #1 defense.</p>
+        <div class="project-tech"><span class="tech-badge">TF-IDF</span><span class="tech-badge">LogReg</span><span class="tech-badge">Flask</span><span class="tech-badge">OWASP LLM</span><span class="tech-badge">NLP</span></div>
+        <div class="project-links"><a href="https://github.com/CyberEnthusiastic/prompt-injection-proxy" target="_blank" class="project-link">⬡ GitHub</a></div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-header"><span class="project-type">APPSEC / SAST</span><span class="project-icon">⚡</span></div>
+      <div class="project-body">
+        <div class="project-title">AI SAST Scanner</div>
+        <p class="project-desc">Static code analysis for 10 vulnerability classes with ML risk scoring (0-100). CWE + OWASP mapped. Interactive dark-mode HTML report. Zero dependencies.</p>
+        <div class="project-tech"><span class="tech-badge">CWE</span><span class="tech-badge">OWASP</span><span class="tech-badge">ML Scoring</span><span class="tech-badge">Regex</span><span class="tech-badge">Python</span></div>
+        <div class="project-links"><a href="https://github.com/CyberEnthusiastic/ai-sast-scanner" target="_blank" class="project-link">⬡ GitHub</a></div>
       </div>
     </div>
     <div class="project-card reveal">
       <div class="project-header"><span class="project-type">CLOUD SECURITY</span><span class="project-icon">☁️</span></div>
       <div class="project-body">
-        <div class="project-title">AWS Security Posture Dashboard</div>
-        <p class="project-desc">Real-time Grafana dashboard aggregating GuardDuty findings, Security Hub scores, and IAM anomalies across multi-account AWS environments.</p>
-        <div class="project-tech"><span class="tech-badge">AWS</span><span class="tech-badge">GuardDuty</span><span class="tech-badge">Grafana</span><span class="tech-badge">Prometheus</span><span class="tech-badge">Terraform</span></div>
-        <div class="project-links"><a href="#" class="project-link">⬡ GitHub</a></div>
+        <div class="project-title">Cloud Misconfiguration Hunter</div>
+        <p class="project-desc">IaC security scanner — 15 CIS AWS Benchmark rules covering S3, IAM, EC2, RDS, CloudTrail, EBS, VPC, KMS. Context-aware scoring for prod vs. test.</p>
+        <div class="project-tech"><span class="tech-badge">AWS</span><span class="tech-badge">Terraform</span><span class="tech-badge">CIS</span><span class="tech-badge">S3</span><span class="tech-badge">IAM</span><span class="tech-badge">RDS</span></div>
+        <div class="project-links"><a href="https://github.com/CyberEnthusiastic/cloud-misconfig-hunter" target="_blank" class="project-link">⬡ GitHub</a></div>
       </div>
     </div>
     <div class="project-card reveal">
-      <div class="project-header"><span class="project-type">PENETRATION TESTING</span><span class="project-icon">🎯</span></div>
+      <div class="project-header"><span class="project-type">COMPLIANCE / GRC</span><span class="project-icon">📋</span></div>
       <div class="project-body">
-        <div class="project-title">Web Application Pentest Lab</div>
-        <p class="project-desc">Full VAPT on bWAPP/Bee-Box. Identified SQLi, XSS, CSRF vulnerabilities using OWASP Top 10 with detailed remediation reporting.</p>
-        <div class="project-tech"><span class="tech-badge">Kali Linux</span><span class="tech-badge">Burp Suite</span><span class="tech-badge">Metasploit</span><span class="tech-badge">Nikto</span><span class="tech-badge">OWASP</span></div>
-        <div class="project-links"><a href="#" class="project-link">⬡ GitHub</a><a href="#" class="project-link">⬡ Report</a></div>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-header"><span class="project-type">DEVSECOPS</span><span class="project-icon">⚙️</span></div>
-      <div class="project-body">
-        <div class="project-title">CI/CD Security Pipeline</div>
-        <p class="project-desc">SAST, DAST, and container scanning integrated into GitHub Actions. Security gates prevent vulnerabilities from reaching production.</p>
-        <div class="project-tech"><span class="tech-badge">GitHub Actions</span><span class="tech-badge">Trivy</span><span class="tech-badge">Snyk</span><span class="tech-badge">Docker</span><span class="tech-badge">Semgrep</span></div>
-        <div class="project-links"><a href="#" class="project-link">⬡ GitHub</a></div>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-header"><span class="project-type">SOC / SIEM</span><span class="project-icon">📡</span></div>
-      <div class="project-body">
-        <div class="project-title">Splunk Threat Detection Rules</div>
-        <p class="project-desc">Custom SPL queries and correlation rules for identity threats — brute force, privilege escalation, impossible travel detection mapped to MITRE ATT&amp;CK.</p>
-        <div class="project-tech"><span class="tech-badge">Splunk SPL</span><span class="tech-badge">SIEM</span><span class="tech-badge">MITRE ATT&amp;CK</span><span class="tech-badge">Python</span><span class="tech-badge">Threat Intel</span></div>
-        <div class="project-links"><a href="#" class="project-link">⬡ GitHub</a></div>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="project-header"><span class="project-type">COMPLIANCE</span><span class="project-icon">📋</span></div>
-      <div class="project-body">
-        <div class="project-title">Secure File Storage System</div>
-        <p class="project-desc">Enterprise secure file storage with AES-256 encryption, RBAC, tamper-evident audit logging, and SOC 2 compliance alignment.</p>
-        <div class="project-tech"><span class="tech-badge">Python</span><span class="tech-badge">AES-256</span><span class="tech-badge">RBAC</span><span class="tech-badge">Audit Logs</span><span class="tech-badge">SOC 2</span></div>
-        <div class="project-links"><a href="#" class="project-link">⬡ GitHub</a><a href="#" class="project-link">⬡ Report</a></div>
+        <div class="project-title">Compliance Gap Analyzer</div>
+        <p class="project-desc">RAG-style policy analyzer for SOC 2 and ISO 27001. TF-IDF similarity + negation detection. Extracts verbatim evidence from policy docs. Air-gapped capable.</p>
+        <div class="project-tech"><span class="tech-badge">SOC 2</span><span class="tech-badge">ISO 27001</span><span class="tech-badge">TF-IDF</span><span class="tech-badge">NLP</span><span class="tech-badge">RAG</span></div>
+        <div class="project-links"><a href="https://github.com/CyberEnthusiastic/compliance-gap-analyzer" target="_blank" class="project-link">⬡ GitHub</a></div>
       </div>
     </div>
   </div>
