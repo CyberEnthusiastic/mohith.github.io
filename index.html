@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohith Vasamsetti // Security Engineer</title>
-<meta name="description" content="Security Engineer with 5+ years at Amazon, Costco, Axis Bank. 8+ open-source security tools. CISA, AWS Security Specialty.">
+<meta name="description" content="Security Engineer with 5+ years at Amazon, Costco, Axis Bank. 16+ open-source security tools covering AppSec, Cloud, K8s, CI/CD, AI, Compliance. CISA, AWS Security Specialty.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -268,14 +268,16 @@ section{padding:80px 50px;position:relative;z-index:10}
     <div class="hero-tag">&gt;_ FULL-SPECTRUM SECURITY ENGINEER</div>
     <h1 class="hero-name"><div class="first">MOHITH</div><div class="last">VASAMSETTI</div></h1>
     <div class="hero-title">Security Engineer &nbsp;|&nbsp; 5+ Years &nbsp;|&nbsp; Fortune 500</div>
-    <p class="hero-desc">Building <strong>open-source security tools</strong> that replace $200K+/yr of enterprise SaaS. <strong>8+ production-grade repos</strong> covering AppSec, Cloud, AI Security, Compliance, WAF testing, and SaaS governance.</p>
+    <p class="hero-desc">Building <strong>open-source security tools</strong> that replace $200K+/yr of enterprise SaaS. <strong>16+ production-grade repos</strong> covering AppSec, Cloud, K8s, CI/CD, AI Security, Identity, Compliance, WAF testing, Supply Chain, and SaaS governance.</p>
     <div class="pills">
       <span class="pill">IAM</span><span class="pill">Cloud Security</span>
       <span class="pill g">Pentesting</span><span class="pill g">DevSecOps</span>
       <span class="pill o">WAF</span><span class="pill">AppSec</span>
       <span class="pill o">SOC</span><span class="pill">AI Security</span>
       <span class="pill g">Product Security</span><span class="pill">GRC</span>
-      <span class="pill o">SaaS Security</span>
+      <span class="pill o">SaaS Security</span><span class="pill g">K8s Security</span>
+      <span class="pill">CI/CD Security</span><span class="pill o">Supply Chain</span>
+      <span class="pill g">MITRE ATT&amp;CK</span>
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-p">View Projects</a>
@@ -362,6 +364,29 @@ section{padding:80px 50px;position:relative;z-index:10}
     <button class="sl-arrow sl-right" onclick="slideShowcase(1)">&rarr;</button>
     <div class="sl-dots" id="slDots"></div>
     <div class="sl-viewport" id="slViewport">
+
+      <!-- Slide 0: Security Command Center (flagship) -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">Security Command Center</span><a href="https://github.com/CyberEnthusiastic/security-command-center" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python scc.py orchestrate --all-tools
+<span class="dt-dim">Unified dashboard: 15 AI security tools | one console</span>
+
+<span class="dt-grn">[+]</span> <span class="dt-cyan">ai-sast-scanner</span>      16 findings  (10 CRIT)
+<span class="dt-grn">[+]</span> <span class="dt-cyan">cloud-misconfig</span>       19 findings  (6 CRIT)
+<span class="dt-grn">[+]</span> <span class="dt-cyan">itdr-engine</span>           11 alerts    (7 CRIT)
+<span class="dt-grn">[+]</span> <span class="dt-cyan">waf-bypass-lab</span>        91.4% coverage
+<span class="dt-grn">[+]</span> <span class="dt-cyan">k8s-admission</span>         15 CIS rules active
+<span class="dt-grn">[+]</span> <span class="dt-cyan">cicd-scanner</span>          OWASP CICD Top 10
+<span class="dt-grn">[+]</span> <span class="dt-cyan">soc2-automation</span>       Trust Services mapped
+<span class="dt-grn">[+]</span> <span class="dt-cyan">mitre-rules</span>           Sigma/Splunk/Elastic
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%"></span></span>
+<span class="dt-grn">Tools: 15</span> | Findings aggregated: <span class="dt-red">47</span> | MITRE coverage: <span class="dt-grn">84%</span>
+          </div>
+        </div>
+      </div>
 
       <!-- Slide 1: AI SAST Scanner -->
       <div class="sl-slide">
@@ -555,6 +580,90 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
         </div>
       </div>
 
+      <!-- Slide: K8s Admission Controller -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">K8s Admission Controller</span><a href="https://github.com/CyberEnthusiastic/k8s-admission-controller" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> kubectl apply -f deployment.yaml
+<span class="dt-dim">Admission webhook: 15 CIS K8s benchmark rules | zero deps</span>
+
+<span class="dt-red">[DENIED]</span> K8S-001 Privileged container (CIS 5.2.1)
+  <span class="dt-dim">pod/nginx-prod</span> <span class="dt-cyan">risk=95</span>
+  <span class="dt-code">securityContext.privileged: true</span>
+
+<span class="dt-red">[DENIED]</span> K8S-007 hostNetwork enabled (CIS 5.2.4)
+  <span class="dt-dim">pod/scanner</span> <span class="dt-cyan">risk=88</span>
+  <span class="dt-code">spec.hostNetwork: true</span>
+
+<span class="dt-red">[DENIED]</span> K8S-012 Run as root (CIS 5.2.6)
+  <span class="dt-dim">pod/api-gateway</span> <span class="dt-cyan">risk=82</span>
+  <span class="dt-code">runAsUser: 0</span>
+
+<span class="dt-grn">[ADMITTED]</span> pod/frontend — all policies pass
+
+<span class="dt-bar"><span class="dt-fill" style="width:80%;background:linear-gradient(90deg,#ff3b30,#00d4ff)"></span></span>
+<span class="dt-dim">Rules: 15 | Denied: 3 | Admitted: 7 | Mode: webhook+CLI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide: Secrets Detection + Rotation -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">Secrets Detection + Rotation Engine</span><a href="https://github.com/CyberEnthusiastic/secrets-detection-rotation-engine" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python secrets.py scan --git-history --rotate
+<span class="dt-dim">Scanning 1,247 commits across 12 branches...</span>
+
+<span class="dt-red">[CRITICAL]</span> AWS Access Key (CWE-798)
+  <span class="dt-dim">.env:3 @ commit a8f9d2c</span> <span class="dt-cyan">provider=aws</span>
+  <span class="dt-code">AKIA****************</span>
+  <span class="dt-yel">Runbook:</span> aws iam delete-access-key → rotate via IAM
+
+<span class="dt-red">[CRITICAL]</span> GitHub PAT leaked
+  <span class="dt-dim">config.yml:12 @ commit f3b1e4a</span> <span class="dt-cyan">provider=github</span>
+  <span class="dt-code">ghp_****************</span>
+  <span class="dt-yel">Runbook:</span> Settings → Developer → Revoke + regenerate
+
+<span class="dt-red">[HIGH]</span> Slack Bot Token
+  <span class="dt-dim">deploy.sh:8</span> <span class="dt-cyan">provider=slack</span>
+  <span class="dt-code">xoxb-*******</span>
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%"></span></span>
+<span class="dt-dim">Providers: 17 | Secrets: 8 | Rotation runbooks: auto-generated</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide: CI/CD Security Scanner -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">CI/CD Security Scanner</span><a href="https://github.com/CyberEnthusiastic/cicd-security-scanner" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python cicd_scan.py .github/workflows/
+<span class="dt-dim">OWASP CICD Top 10 | 4 workflow files analyzed</span>
+
+<span class="dt-red">[CRITICAL]</span> CICD-SEC-4 pwn-request (script injection)
+  <span class="dt-dim">release.yml:23</span> <span class="dt-cyan">risk=96</span>
+  <span class="dt-code">run: echo "${{ github.event.pull_request.title }}"</span>
+
+<span class="dt-red">[CRITICAL]</span> CICD-SEC-2 Inadequate Identity (OIDC missing)
+  <span class="dt-dim">deploy.yml:41</span> <span class="dt-cyan">risk=91</span>
+  <span class="dt-code">aws-access-key-id: ${{ secrets.AWS_KEY }}</span>
+
+<span class="dt-red">[HIGH]</span> CICD-SEC-7 Insecure artifact (no provenance)
+  <span class="dt-dim">build.yml:55</span> <span class="dt-cyan">risk=78</span>
+
+<span class="dt-yel">[MED]</span> CICD-SEC-3 Dependency chain (unpinned @main)
+  <span class="dt-dim">ci.yml:11</span> <span class="dt-code">uses: actions/checkout@main</span>
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%;background:linear-gradient(90deg,#ff3b30,#ff9500)"></span></span>
+<span class="dt-dim">Top 10 coverage: 10/10 | Findings: 7 | CRIT: 2 | HIGH: 3</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Slide 9: Personal Firewall -->
       <div class="sl-slide">
         <div class="demo-term">
@@ -704,6 +813,10 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
     'ai-sast-scanner':'⚡','cloud-misconfig-hunter':'☁️','compliance-gap-analyzer':'📋',
     'ai-governance-framework':'🏛️','saas-security-posture':'💰',
     'itdr-engine':'🔍','sbom-analyzer':'📦',
+    'soc2-compliance-automation':'✅','k8s-admission-controller':'⎈',
+    'cicd-security-scanner':'🔧','iam-least-privilege-analyzer':'🔑',
+    'mitre-attack-detection-rules':'🎯','secrets-detection-rotation-engine':'🔐',
+    'personal-firewall':'🔥',
   };
   const CATEGORIES={
     'security-command-center':'ORCHESTRATION','waf-bypass-lab':'WAF TESTING',
@@ -711,6 +824,10 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
     'cloud-misconfig-hunter':'CLOUD SECURITY','compliance-gap-analyzer':'COMPLIANCE / GRC',
     'ai-governance-framework':'AI GOVERNANCE','saas-security-posture':'SAAS SECURITY',
     'itdr-engine':'IDENTITY SECURITY','sbom-analyzer':'SUPPLY CHAIN',
+    'soc2-compliance-automation':'SOC 2 / COMPLIANCE','k8s-admission-controller':'K8S SECURITY',
+    'cicd-security-scanner':'CI/CD SECURITY','iam-least-privilege-analyzer':'IAM / CLOUD',
+    'mitre-attack-detection-rules':'THREAT DETECTION','secrets-detection-rotation-engine':'SECRETS MGMT',
+    'personal-firewall':'NETWORK SECURITY',
   };
 
   fetch('https://api.github.com/users/CyberEnthusiastic/repos?sort=pushed&per_page=30')
