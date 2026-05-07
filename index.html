@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohith Vasamsetti // Security Engineer</title>
-<meta name="description" content="Security Engineer with 5+ years at Amazon, Costco, Axis Bank. 18+ open-source security tools covering AppSec, Cloud, K8s, CI/CD, AI, Compliance, IaC drift. CISA, AWS Security Specialty.">
+<meta name="description" content="Security Engineer with 5+ years at Amazon, Costco, Axis Bank. 21+ open-source security tools covering AppSec, Cloud, K8s, CI/CD, AI, MDR, TPRM, Threat Intel, Compliance, IaC drift. CISA, AWS Security Specialty.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -284,7 +284,7 @@ section{padding:80px 50px;position:relative;z-index:10}
     <div class="hero-tag">&gt;_ FULL-SPECTRUM SECURITY ENGINEER</div>
     <h1 class="hero-name"><div class="first">MOHITH</div><div class="last">VASAMSETTI</div></h1>
     <div class="hero-title">Security Engineer &nbsp;|&nbsp; 5+ Years &nbsp;|&nbsp; Fortune 500</div>
-    <p class="hero-desc">Building <strong>open-source security tools</strong> that replace $200K+/yr of enterprise SaaS. <strong>18+ production-grade repos</strong> covering AppSec, Cloud, K8s, CI/CD, AI Security, Identity, Compliance, WAF testing, Supply Chain, and SaaS governance.</p>
+    <p class="hero-desc">Building <strong>open-source security tools</strong> that replace $200K+/yr of enterprise SaaS. <strong>21+ production-grade repos</strong> covering AppSec, Cloud, K8s, CI/CD, AI Security, Identity, Compliance, WAF testing, MDR triage, Threat Intel, TPRM, and SaaS governance.</p>
     <div class="pills">
       <span class="pill">IAM</span><span class="pill">Cloud Security</span>
       <span class="pill g">Pentesting</span><span class="pill g">DevSecOps</span>
@@ -293,7 +293,9 @@ section{padding:80px 50px;position:relative;z-index:10}
       <span class="pill g">Product Security</span><span class="pill">GRC</span>
       <span class="pill o">SaaS Security</span><span class="pill g">K8s Security</span>
       <span class="pill">CI/CD Security</span><span class="pill o">Supply Chain</span>
-      <span class="pill g">MITRE ATT&amp;CK</span>
+      <span class="pill g">MITRE ATT&amp;CK</span><span class="pill">MDR / SOC</span>
+      <span class="pill o">Threat Intel</span><span class="pill g">TPRM</span>
+      <span class="pill">IaC Security</span>
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-p">View Projects</a>
@@ -315,7 +317,7 @@ section{padding:80px 50px;position:relative;z-index:10}
   <div class="stat reveal"><span class="stat-n" data-c="5">0</span><span class="stat-l">Years</span></div>
   <div class="stat reveal"><span class="stat-n" data-c="3">0</span><span class="stat-l">Fortune 500</span></div>
   <div class="stat reveal"><span class="stat-n" data-c="150">0</span><span class="stat-l">Vulns Fixed</span></div>
-  <div class="stat reveal"><span class="stat-n" id="repoCountStat" data-c="18">0</span><span class="stat-l">Open-Source Tools</span></div>
+  <div class="stat reveal"><span class="stat-n" id="repoCountStat" data-c="21">0</span><span class="stat-l">Open-Source Tools</span></div>
   <div class="stat reveal"><span class="stat-n" data-c="11">0</span><span class="stat-l">Security Domains</span></div>
 </div>
 
@@ -739,6 +741,89 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
         </div>
       </div>
 
+      <!-- Slide: MDR Triage Bot -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">MDR Alert Triage Bot</span><a href="https://github.com/CyberEnthusiastic/mdr-triage-bot" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python triage_bot.py --alerts alerts.json --intel intel.json --slack $WH
+<span class="dt-dim">CrowdStrike + SentinelOne + Defender | 5 alerts</span>
+
+<span class="dt-red">[CRITICAL]</span> <span class="dt-cyan">BLOCK       </span> powershell.exe
+   vendor=crowdstrike  host=WIN-FIN-014  user=fin\jdoe
+   <span class="dt-dim">tactic=Command and Control  technique=T1071.001</span>
+   <span class="dt-code">worst IOC score: 98</span>
+     <span class="dt-red">- 44d8...02f</span> (sha256) score=98  [malware,smokeloader]
+     <span class="dt-red">- 45.155.205.233</span> (ipv4)  score=95  [c2,cobalt-strike]
+
+<span class="dt-red">[HIGH    ]</span> <span class="dt-cyan">BLOCK       </span> Suspicious DNS lookup
+   vendor=defender  host=WIN-DEV-22
+     <span class="dt-red">- evil-update.click</span> (domain) score=92  [fakeupdate]
+
+<span class="dt-yel">[LOW     ]</span> <span class="dt-grn">AUTO_CLOSE  </span> chrome.exe → 8.8.8.8
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%"></span></span>
+<span class="dt-grn">Saved ~10min</span> | block: 2 | auto-close: 2 | invest: 1 | Slack posted
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide: Threat Intel Analyzer -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">Threat Intel Analyzer</span><a href="https://github.com/CyberEnthusiastic/threat-intel-analyzer" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python analyzer.py --observation incident.json --intel intel.json --rules-out rules/
+<span class="dt-dim">5 IOCs | 30+ ATT&amp;CK corpus | 8 threat-actor profiles</span>
+
+<span class="dt-cyan">── MITRE ATT&amp;CK techniques mapped ──</span>
+   T1071.001  Web Protocols (HTTP/S)        [Command and Control]  conf=85
+   T1090.003  Multi-hop Proxy (Tor)         [Command and Control]  conf=85
+   T1486      Data Encrypted for Impact     [Impact]               conf=85
+   T1490      Inhibit System Recovery       [Impact]               conf=85
+   T1059.001  PowerShell                    [Execution]            conf=75
+
+<span class="dt-cyan">── Threat-actor correlations ──</span>
+   <span class="dt-red">SmokeLoader broker</span>          score= 80  (3/6)  <span class="dt-yel">⭐ signature-full</span>
+   <span class="dt-red">BlackCat / ALPHV</span>            score= 50  (5/8)
+   <span class="dt-red">LockBit 3.0 ransomware</span>      score= 44  (5/9)
+
+<span class="dt-grn">[+]</span> wrote rules/<span class="dt-cyan">smokeloader_broker.yml</span>     (Sigma — splunk/elastic/sentinel-ready)
+<span class="dt-grn">[+]</span> wrote rules/<span class="dt-cyan">blackcat_alphv.yml</span>
+<span class="dt-grn">[+]</span> wrote rules/<span class="dt-cyan">tor_based_exfiltration.yml</span>
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%;background:linear-gradient(90deg,#ff3b30,#7B42BC)"></span></span>
+<span class="dt-dim">9 techniques | 8 actors correlated | 3 Sigma rules emitted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide: TPRM Risk Scoring Engine -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">TPRM Risk Scoring Engine</span><a href="https://github.com/CyberEnthusiastic/tprm-risk-engine" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python risk_engine.py --vendors vendors.json --soc2-dir soc2/ --html report.html
+<span class="dt-dim">12 dimensions | weighted to 100 | SOC 2 Type II ingestion</span>
+
+<span class="dt-red">[CRITICAL]</span> ScrappyAnalytics              score = <span class="dt-red">78/100</span>
+   <span class="dt-dim">↳ Iam Controls           score=100  weight= 8  contrib= 800</span>
+   <span class="dt-dim">↳ Data Sensitivity       score= 80  weight=14  contrib=1120</span>
+   <span class="dt-dim">↳ Access Scope           score=100  weight=12  contrib=1200</span>
+   <span class="dt-dim">↳ Soc2 Assurance         score= 90  weight= 9  contrib= 810</span>
+
+<span class="dt-yel">[MEDIUM  ]</span> QuickbillSaaS                 score = 45/100
+   <span class="dt-dim">↳ SOC 2 markdown parser found 2 exceptions + AWS carve-out</span>
+
+<span class="dt-grn">[LOW     ]</span> Salesforce                    score = 32/100
+<span class="dt-grn">[LOW     ]</span> AWS                           score = 36/100  <span class="dt-dim">(PHI floor)</span>
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%;background:linear-gradient(90deg,#ff3b30,#34d399)"></span></span>
+<span class="dt-dim">4 vendors | 12 dimensions | wrote report.html</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Slide 9: Personal Firewall -->
       <div class="sl-slide">
         <div class="demo-term">
@@ -899,7 +984,8 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
     'cicd-security-scanner':'🔧','iam-least-privilege-analyzer':'🔑',
     'mitre-attack-detection-rules':'🎯','secrets-detection-rotation-engine':'🔐',
     'personal-firewall':'🔥','cloud-misconfig-scanner':'🌩️',
-    'terraform-drift-detector':'🌀',
+    'terraform-drift-detector':'🌀','mdr-triage-bot':'🚨',
+    'threat-intel-analyzer':'🛰️','tprm-risk-engine':'⚖️',
   };
   const CATEGORIES={
     'security-command-center':'ORCHESTRATION','waf-bypass-lab':'WAF TESTING',
@@ -911,7 +997,8 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
     'cicd-security-scanner':'CI/CD SECURITY','iam-least-privilege-analyzer':'IAM / CLOUD',
     'mitre-attack-detection-rules':'THREAT DETECTION','secrets-detection-rotation-engine':'SECRETS MGMT',
     'personal-firewall':'NETWORK SECURITY','cloud-misconfig-scanner':'MULTI-CLOUD CSPM',
-    'terraform-drift-detector':'IaC DRIFT',
+    'terraform-drift-detector':'IaC DRIFT','mdr-triage-bot':'MDR / SOC',
+    'threat-intel-analyzer':'THREAT INTEL','tprm-risk-engine':'TPRM / VENDOR RISK',
   };
 
   fetch('https://api.github.com/users/CyberEnthusiastic/repos?sort=pushed&per_page=30')
