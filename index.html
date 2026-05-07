@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohith Vasamsetti // Security Engineer</title>
-<meta name="description" content="Security Engineer with 5+ years at Amazon, Costco, Axis Bank. 16+ open-source security tools covering AppSec, Cloud, K8s, CI/CD, AI, Compliance. CISA, AWS Security Specialty.">
+<meta name="description" content="Security Engineer with 5+ years at Amazon, Costco, Axis Bank. 18+ open-source security tools covering AppSec, Cloud, K8s, CI/CD, AI, Compliance, IaC drift. CISA, AWS Security Specialty.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -268,7 +268,7 @@ section{padding:80px 50px;position:relative;z-index:10}
     <div class="hero-tag">&gt;_ FULL-SPECTRUM SECURITY ENGINEER</div>
     <h1 class="hero-name"><div class="first">MOHITH</div><div class="last">VASAMSETTI</div></h1>
     <div class="hero-title">Security Engineer &nbsp;|&nbsp; 5+ Years &nbsp;|&nbsp; Fortune 500</div>
-    <p class="hero-desc">Building <strong>open-source security tools</strong> that replace $200K+/yr of enterprise SaaS. <strong>16+ production-grade repos</strong> covering AppSec, Cloud, K8s, CI/CD, AI Security, Identity, Compliance, WAF testing, Supply Chain, and SaaS governance.</p>
+    <p class="hero-desc">Building <strong>open-source security tools</strong> that replace $200K+/yr of enterprise SaaS. <strong>18+ production-grade repos</strong> covering AppSec, Cloud, K8s, CI/CD, AI Security, Identity, Compliance, WAF testing, Supply Chain, and SaaS governance.</p>
     <div class="pills">
       <span class="pill">IAM</span><span class="pill">Cloud Security</span>
       <span class="pill g">Pentesting</span><span class="pill g">DevSecOps</span>
@@ -299,7 +299,7 @@ section{padding:80px 50px;position:relative;z-index:10}
   <div class="stat reveal"><span class="stat-n" data-c="5">0</span><span class="stat-l">Years</span></div>
   <div class="stat reveal"><span class="stat-n" data-c="3">0</span><span class="stat-l">Fortune 500</span></div>
   <div class="stat reveal"><span class="stat-n" data-c="150">0</span><span class="stat-l">Vulns Fixed</span></div>
-  <div class="stat reveal"><span class="stat-n" id="repoCountStat" data-c="16">0</span><span class="stat-l">Open-Source Tools</span></div>
+  <div class="stat reveal"><span class="stat-n" id="repoCountStat" data-c="18">0</span><span class="stat-l">Open-Source Tools</span></div>
   <div class="stat reveal"><span class="stat-n" data-c="11">0</span><span class="stat-l">Security Domains</span></div>
 </div>
 
@@ -664,6 +664,66 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
         </div>
       </div>
 
+      <!-- Slide: Cloud Misconfig Scanner (AWS+Azure CIS+drift) -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">Cloud Misconfig Scanner (AWS + Azure)</span><a href="https://github.com/CyberEnthusiastic/cloud-misconfig-scanner" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python scanner.py --aws aws.json --azure az.json --env prod --baseline --slack $WH
+<span class="dt-dim">80 CIS controls | AWS:40 + Azure:40 | drift detection on</span>
+
+<span class="dt-red">[CRITICAL]</span> Root account has access keys (CIS AWS 1.4)
+  <span class="dt-dim">iam:root</span>  cloud=<span class="dt-cyan">aws</span>
+  <span class="dt-code">2 active programmatic keys on root user</span>
+
+<span class="dt-red">[CRITICAL]</span> Storage allows public blobs (CIS Azure 3.5)
+  <span class="dt-dim">storage:stcontosoprod</span>  cloud=<span class="dt-cyan">azure</span>
+  <span class="dt-code">allowBlobPublicAccess=true</span>
+
+<span class="dt-red">[CRITICAL]</span> NSG exposes RDP 3389 to Internet (CIS Azure 6.2)
+  <span class="dt-dim">nsg:nsg-web</span>  cloud=<span class="dt-cyan">azure</span>
+
+--- Drift since last baseline ---
+   NEW: <span class="dt-red">3</span>   CLOSED: <span class="dt-grn">1</span>   UNCHANGED: 75
+<span class="dt-grn">[+]</span> Slack posted to #sec-alerts (top-5 attachments)
+
+<span class="dt-bar"><span class="dt-fill" style="width:100%;background:linear-gradient(90deg,#ff3b30,#0078d4)"></span></span>
+<span class="dt-dim">Findings: 79 | CRIT: 12 | HIGH: 24 | aws: 38 | azure: 41</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide: Terraform Drift Detector -->
+      <div class="sl-slide">
+        <div class="demo-term">
+          <div class="dt-head"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="dt-title">Terraform Drift Detector</span><a href="https://github.com/CyberEnthusiastic/terraform-drift-detector" target="_blank" class="dt-link">GitHub &rarr;</a></div>
+          <div class="dt-body">
+<span class="tp">$</span> python detector.py --tf tf.json --observed aws.json --pr-out drift.md --create-pr
+<span class="dt-dim">Diff: terraform show -json  vs  deployed AWS state</span>
+
+<span class="dt-red">[CRITICAL]</span> Out-of-band AdministratorAccess attachment
+  <span class="dt-dim">aws_iam_role_policy_attachment.console_added_admin</span>
+  <span class="dt-code">role=app-runtime  policy_arn=AdministratorAccess  kind=ADDED</span>
+
+<span class="dt-red">[CRITICAL]</span> IAM policy edited to wildcard Action+Resource
+  <span class="dt-dim">aws_iam_policy.app_runtime</span>
+  <span class="dt-code">Action:* + Resource:*  kind=MODIFIED</span>
+
+<span class="dt-red">[CRITICAL]</span> SG ingress to 0.0.0.0/0 added on port 22
+  <span class="dt-dim">aws_security_group_rule.console_added_ssh</span>
+
+<span class="dt-red">[CRITICAL]</span> S3 BlockPublicAccess relaxed: block_public_acls
+  <span class="dt-dim">aws_s3_bucket_public_access_block.app_data</span>
+  <span class="dt-code">true → false  kind=MODIFIED</span>
+
+<span class="dt-grn">[+]</span> PR opened: <span class="dt-cyan">drift-1733184912 → main</span> (10 findings)
+
+<span class="dt-bar"><span class="dt-fill" style="width:95%;background:linear-gradient(90deg,#ff3b30,#7B42BC)"></span></span>
+<span class="dt-dim">Drift items: 10 | CRIT: 5 | HIGH: 2 | accuracy: ~95%</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Slide 9: Personal Firewall -->
       <div class="sl-slide">
         <div class="demo-term">
@@ -816,7 +876,8 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
     'soc2-compliance-automation':'✅','k8s-admission-controller':'⎈',
     'cicd-security-scanner':'🔧','iam-least-privilege-analyzer':'🔑',
     'mitre-attack-detection-rules':'🎯','secrets-detection-rotation-engine':'🔐',
-    'personal-firewall':'🔥',
+    'personal-firewall':'🔥','cloud-misconfig-scanner':'🌩️',
+    'terraform-drift-detector':'🌀',
   };
   const CATEGORIES={
     'security-command-center':'ORCHESTRATION','waf-bypass-lab':'WAF TESTING',
@@ -827,7 +888,8 @@ Compliance: <span class="dt-yel">55%</span> | Covered: 2 | Partial: 7 | Missing:
     'soc2-compliance-automation':'SOC 2 / COMPLIANCE','k8s-admission-controller':'K8S SECURITY',
     'cicd-security-scanner':'CI/CD SECURITY','iam-least-privilege-analyzer':'IAM / CLOUD',
     'mitre-attack-detection-rules':'THREAT DETECTION','secrets-detection-rotation-engine':'SECRETS MGMT',
-    'personal-firewall':'NETWORK SECURITY',
+    'personal-firewall':'NETWORK SECURITY','cloud-misconfig-scanner':'MULTI-CLOUD CSPM',
+    'terraform-drift-detector':'IaC DRIFT',
   };
 
   fetch('https://api.github.com/users/CyberEnthusiastic/repos?sort=pushed&per_page=30')
